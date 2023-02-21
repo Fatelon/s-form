@@ -1,0 +1,16 @@
+.simple-form-container {
+  max-width: 500px;
+  margin: 30px;
+}
+
+// input.ng-invalid.ng-touched {
+//   border: 1px solid yellow !important;
+// }
+
+// .was-validated .form-control:invalid, .form-control.is-invalid {
+//   border: 1px solid yellow !important;
+// }
+
+::ng-deep.form-control.is-invalid {
+  border: 1px solid lightsalmon;
+}

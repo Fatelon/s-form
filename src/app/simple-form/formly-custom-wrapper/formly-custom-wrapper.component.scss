@@ -1,0 +1,24 @@
+.custom-wrapper {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 10px;
+
+  &__label {
+    margin-right: 30px;
+    flex: 0.5;
+  }
+
+  &__field {
+    flex: 1;
+  }
+
+  &__error {
+    background-color: yellow;
+  }
+
+  &__additional {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

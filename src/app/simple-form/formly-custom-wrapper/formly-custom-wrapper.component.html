@@ -1,0 +1,13 @@
+<div class="custom-wrapper">
+  <span class="custom-wrapper__label">{{ props.label }}</span>
+  <div class="custom-wrapper__field">
+    <ng-container #fieldComponent></ng-container>
+    <!-- <div *ngIf="showErr(field)" class="custom-wrapper__error"> -->
+    <div class="custom-wrapper__additional">
+      <span>{{ props.description }}</span>
+      <div *ngIf="showErr(field)" class="badge bg-warning">
+        <formly-validation-message [field]="field"></formly-validation-message>
+      </div>
+    </div>
+  </div>
+</div>
