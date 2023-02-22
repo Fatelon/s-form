@@ -1,8 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyCustomWrapperComponent } from './formly-custom-wrapper/formly-custom-wrapper.component';
-import { FormlyFieldInputComponent } from './formly-field-input/formly-field-input.component';
 
 @Component({
   selector: 'app-simple-form',
@@ -10,16 +9,9 @@ import { FormlyFieldInputComponent } from './formly-field-input/formly-field-inp
   styleUrls: ['./simple-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SimpleFormComponent implements OnInit {
+export class SimpleFormComponent {
 
   form = new FormGroup({});
-  // form: FormGroup = this.formBuilder.group({
-  //   email: ['123', [Validators.required, Validators.maxLength(5)]]
-  // });
-
-  // unsubscribeOnDestroy$: Subject<boolean> | null = new Subject<boolean>();
-
-  // model = { email: 'email@gmail.com' };
   model = {
     customizable: false
   };
@@ -28,11 +20,9 @@ export class SimpleFormComponent implements OnInit {
     {
       key: 'name',
       wrappers: [FormlyCustomWrapperComponent],
-      // type: FormlyFieldInputComponent,
       type: 'input',
       props: {
         label: 'Template Name',
-        // required: true,
       }
     },
     {
@@ -45,11 +35,6 @@ export class SimpleFormComponent implements OnInit {
         description: 'Modifiers: ..',
         required: true,
       },
-      // expressions: {
-      //   hide: (field: FormlyFieldConfig) => {
-      //     return field.model?.test === '123';
-      //   },
-      // }
     },
     {
       key: 'description',
@@ -86,7 +71,7 @@ export class SimpleFormComponent implements OnInit {
       },
     },
     {
-      key: 'Instructions',
+      key: 'instructions',
       wrappers: [FormlyCustomWrapperComponent],
       type: 'textarea',
       props: {
@@ -100,24 +85,11 @@ export class SimpleFormComponent implements OnInit {
 
   constructor(private readonly formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
-    // this.form.valueChanges.subscribe(res => console.log('Form changed!!!!', res));
-    // this.form.get('email2')?.valueChanges.subscribe(res => console.log('Form changed!!!!', res));
-    console.log('ngOnInit', this.form.get('email'));
-
-    queueMicrotask(() => {
-      // this.form.get('email')?.valueChanges.subscribe(res => console.log('email changed!', res));
-      // this.form.get('email')?.setValidators(Validators.maxLength(5));
-      // this.form.get('email')?.patchValue('123dsd');
-    });
-  }
-
   onModelChange(model: any) {
     console.log('onModelChange', model);
   }
 
   onSubmit(model: any) {
-    // console.log('onSubmit clicked', model);
     console.log('2222', this.form.get('email2'));
   }
 

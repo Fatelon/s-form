@@ -27,11 +27,6 @@ import { FormlyCustomWrapperComponent } from './formly-custom-wrapper/formly-cus
       ],
       validationMessages: [
         { name: 'required', message: 'This field is required!!' },
-        // {
-        //   name: 'required',
-        //   // message: (error: any, field: FormlyFieldConfig) => `"${field.formControl?.value}" is not a valid IP Address`
-        //   message: (error: any, field: FormlyFieldConfig) => `Warning - No ${field.key} modifier`
-        // },
       ],
     }),
     FormlyBootstrapModule,
